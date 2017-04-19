@@ -1,0 +1,8 @@
+.jud-indicators {
+  position: absolute;
+  white-space: nowrap;
+}
+.jud-indicators .jud-indicator {
+  float: left;
+  border-radius: 50%;
+}
