@@ -53,7 +53,7 @@ const DEFAULT_DESIGN_WIDTH = 750
 const DEFAULT_ROOT_ID = 'jud'
 const DEFAULT_JSONP_CALLBACK_NAME = 'judJsonpCallback'
 
-global.WXEnvironment = {
+global.JUDEnvironment = {
   judVersion: config.judVersion,
   appName: lib.env.jdapp ? lib.env.jdapp.appname : null,
   appVersion: lib.env.jdapp ? lib.env.jdapp.version.val : null,

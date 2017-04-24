@@ -1,6 +1,6 @@
 /**
  * @fileOverview
- * This file will hack `console` methods by `WXEnvironment.logLevel`.
+ * This file will hack `console` methods by `JUDEnvironment.logLevel`.
  * So we can control how many and which messages will be sent by change the log level.
  * Additionally in native platform the message content must be primitive values and
  * using `nativeLog(...args, logLevelMark)` so we create a new `console` object in
@@ -21,7 +21,7 @@ export function setNativeConsole () {
   /* istanbul ignore next */
   if (
     typeof global.console === 'undefined' || // Android
-    (global.WXEnvironment && global.WXEnvironment.platform === 'iOS') // iOS
+    (global.JUDEnvironment && global.JUDEnvironment.platform === 'iOS') // iOS
   ) {
     global.console = {
       debug: (...args) => {
@@ -94,7 +94,7 @@ function generateLevelMap () {
  * @return {boolean}
  */
 function checkLevel (type) {
-  const logLevel = (global.WXEnvironment && global.WXEnvironment.logLevel) || 'log'
+  const logLevel = (global.JUDEnvironment && global.JUDEnvironment.logLevel) || 'log'
   return levelMap[logLevel] && levelMap[logLevel][type]
 }
 

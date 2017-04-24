@@ -4,7 +4,7 @@ import { init as initViewport } from './viewport'
 import { extend } from '../utils'
 
 /**
- * get WXEnvironment info.
+ * get JUDEnvironment info.
  * @param  {object} viewportInfo: info about viewport.
  * @param  {object} envInfo: info parsed from lib.env.
  */
@@ -49,4 +49,4 @@ export function initEnv (viewportInfo, envInfo) {
 // Object.freeze(env)
 
 // window.CSS_UNIT = units
-window.WXEnvironment = initEnv(initViewport(), window.lib.env)
+window.JUDEnvironment = initEnv(initViewport(), window.lib.env)

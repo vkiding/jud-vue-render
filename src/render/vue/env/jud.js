@@ -10,7 +10,7 @@ const jud = {
   utils,
   // units: window.CSS_UNIT,
   config: {
-    env: window.WXEnvironment,
+    env: window.JUDEnvironment,
     bundleUrl: location.href
   },
 

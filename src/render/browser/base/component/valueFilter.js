@@ -28,7 +28,7 @@ export function getFilters (key) {
           return parseFloat(match[1]) + 'px'
         }
         else if (match[2] === 'wx') {
-          return parseFloat(match[1]) * global.WXEnvironment.devicePixelRatio + 'px'
+          return parseFloat(match[1]) * global.JUDEnvironment.devicePixelRatio + 'px'
         }
       }
       if (key.match(/transform/) && val.match(/translate/)) {
@@ -37,14 +37,14 @@ export function getFilters (key) {
         })
         if (ret.match(/wx/)) {
           ret = ret.replace(/\d*\.?\d+wx/g, function (match) {
-            return parseInt(parseFloat(match)) * global.WXEnvironment.devicePixelRatio + 'px'
+            return parseInt(parseFloat(match)) * global.JUDEnvironment.devicePixelRatio + 'px'
           })
         }
         return ret
       }
       if (key.match(/^border$/) && val.match(/^\d+(?:[w,p]x)?\s+/)) {
         val = val.replace(/^(\d+(?:[w,p]x)?)/, function ($0, $1) {
-          const v = parseFloat($1) * (val.match(/^\d+(?:wx)+/) ? global.WXEnvironment.devicePixelRatio : 1)
+          const v = parseFloat($1) * (val.match(/^\d+(?:wx)+/) ? global.JUDEnvironment.devicePixelRatio : 1)
           return v + 'px'
         })
       }
